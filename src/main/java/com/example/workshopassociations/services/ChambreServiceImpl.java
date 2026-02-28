@@ -1,6 +1,7 @@
 package com.example.workshopassociations.services;
 
 import com.example.workshopassociations.entities.Chambre;
+import com.example.workshopassociations.entities.typeC;
 import com.example.workshopassociations.repository.ChambreRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 public class ChambreServiceImpl implements ChambreService {
 
-    @Autowired
-    private ChambreRepository chambreRepository;
+    private final ChambreRepository chambreRepository;
+
 
     @Override
     public Chambre saveChambre(Chambre chambre) {
@@ -34,5 +35,36 @@ public class ChambreServiceImpl implements ChambreService {
     public List<Chambre> GetAllChambre() {
         return chambreRepository.findAll();
     }
+
+
+    @Override
+    public List<Chambre> GetAllChambresJPQL() {
+        return chambreRepository.findAllChambresJPQL();
+    }
+    @Override
+    public List<Chambre> GetAllChambresSIMPLE() {
+        return chambreRepository.findAllChambresSIMPLE();
+    }
+
+    @Override
+    public List<Chambre> GetAllChambresByEtudiant(Long idEtudiant) {
+        return chambreRepository.findAllChambresReservedByEtudiant(idEtudiant);
+    }
+
+    @Override
+    public List<Chambre> GetAllChambresByFoyerUniversite(String nomUniversite) {
+        return chambreRepository.findAllChambresByFoyerUniversite(nomUniversite);
+    }
+
+    @Override
+    public Long CountChambresByTypeC(typeC type) {
+        return chambreRepository.CountChambresByType(type);
+    }
+
+    @Override
+    public List<Chambre> GetAllChambresByNumChambre() {
+        return chambreRepository.findAllChambresByNumChambre();
+    }
+
 }
 

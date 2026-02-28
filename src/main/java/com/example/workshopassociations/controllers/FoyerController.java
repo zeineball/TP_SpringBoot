@@ -32,4 +32,9 @@ public class FoyerController {
     public Foyer  getFoyer(@PathVariable Long id){
         return FoyerServiceImpl.getFoyerById(id);
     }
+
+    @GetMapping("/all500")
+    public List<Foyer>getAllFoyers500(){
+        return FoyerServiceImpl.getAllFoyers500();
+    }
 }

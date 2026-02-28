@@ -34,4 +34,19 @@ public class BlocServiceImpl implements BlocService{
     public List<Bloc> getAllBloc() {
         return blocRepository.findAll();
     }
+
+    @Override
+    public Bloc getBlocByIdJPQL(Long idBloc) {
+        return blocRepository.getBlocByIdJPQL(idBloc);
+    }
+
+    @Override
+    public List<Bloc> getAllBlocsByIdFoyer(Long idFoyer) {
+        return blocRepository.getAllBlocsByIdFoyer(idFoyer);
+    }
+
+    @Override
+    public List<Bloc> getBlocsBy10Chambres() {
+        return blocRepository.getBlocsBy10Chambres();
+    }
 }

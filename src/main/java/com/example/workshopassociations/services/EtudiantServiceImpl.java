@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 public class EtudiantServiceImpl implements EtudiantService {
 
-    @Autowired
-    EtudiantRepository etudiantRepository;
+
+    private final EtudiantRepository etudiantRepository;
     @Override
     public Etudiant saveEtudiant(Etudiant etudiant) {
         return etudiantRepository.save(etudiant);
@@ -32,5 +32,30 @@ public class EtudiantServiceImpl implements EtudiantService {
     @Override
     public Etudiant getEtudiantById(Long idEtudiant) {
         return etudiantRepository.findById(idEtudiant).orElse(null);
+    }
+
+    @Override
+    public List<Etudiant> getAllEtudiantsEsprit(){
+        return etudiantRepository.ListEtudiantsEsprit();
+    }
+
+    @Override
+    public List<Etudiant> getAllEtudiants2000() {
+        return etudiantRepository.ListEtudiants2000();
+    }
+
+    @Override
+    public List<Etudiant> getAllEtudiantsByFoyer(Long idFoyer) {
+        return etudiantRepository.ListEtudiantsByFoyer(idFoyer);
+    }
+
+    @Override
+    public Long CountEtudiantsByUniv() {
+        return etudiantRepository.CountEtudiantsByUniv();
+    }
+
+    @Override
+    public List<Etudiant> getAllEtudiantsReservation() {
+        return etudiantRepository.ListEtudiantsReservations();
     }
 }

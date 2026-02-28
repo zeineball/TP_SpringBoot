@@ -32,5 +32,30 @@ public class EtudiantController {
     public Etudiant  getEtudiant(@PathVariable Long id){
         return EtudiantServiceImpl.getEtudiantById(id);
     }
+
+    @GetMapping("/allEsprit")
+    public List<Etudiant> getAllEtudiantsEsprit(){
+        return EtudiantServiceImpl.getAllEtudiantsEsprit();
+    }
+
+    @GetMapping("/all2000")
+    public List<Etudiant> getAllEtudiants2000(){
+        return EtudiantServiceImpl.getAllEtudiants2000();
+    }
+
+    @GetMapping("/allByFoyer")
+    public List<Etudiant> getAllEtudiantsByFoyer(Long idFoyer){
+        return EtudiantServiceImpl.getAllEtudiantsByFoyer(idFoyer);
+    }
+
+    @GetMapping("/countEtudiantsByUniv")
+    public Long CountEtudiantsByUniv(){
+        return EtudiantServiceImpl.CountEtudiantsByUniv();
+    }
+
+    @GetMapping("/AllReservation")
+    public List<Etudiant> getAllEtudiantsReservation(){
+        return EtudiantServiceImpl.getAllEtudiantsReservation();
+    }
 }
 

@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 public class FoyerServiceImpl implements FoyerService{
 
-    @Autowired
-    FoyerRepository foyerRepository;
+
+    private final FoyerRepository foyerRepository;
     @Override
     public Foyer saveFoyer(Foyer foyer) {
         return foyerRepository.save(foyer);
@@ -32,5 +32,10 @@ public class FoyerServiceImpl implements FoyerService{
     @Override
     public Foyer getFoyerById(Long idFoyer) {
         return foyerRepository.findById(idFoyer).orElse(null);
+    }
+
+    @Override
+    public List<Foyer> getAllFoyers500(){
+        return foyerRepository.findAllFoyers500();
     }
 }

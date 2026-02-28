@@ -32,4 +32,20 @@ public class BlocController {
     public Bloc  getBloc(@PathVariable Long id){
        return blocServiceImpl.getBlocById(id);
     }
+
+    @GetMapping("/getBlocJPQL/{id}")
+    public Bloc getBlocJPQL(@PathVariable Long id){
+        return blocServiceImpl.getBlocByIdJPQL(id);
+    }
+
+    @GetMapping("/allByIdFoyer")
+    public List<Bloc> getAllByIdFoyer(Long idFoyer){
+        return blocServiceImpl.getAllBlocsByIdFoyer(idFoyer);
+    }
+
+    @GetMapping("/allBy10Chambres")
+    public List<Bloc> getAllBy10Chambres(){
+        return blocServiceImpl.getBlocsBy10Chambres();
+    }
+
 }

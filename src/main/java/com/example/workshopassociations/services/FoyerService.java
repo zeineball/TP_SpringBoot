@@ -9,4 +9,5 @@ public interface FoyerService {
     void deleteFoyer(Long idFoyer);
     List<Foyer> getAllFoyer();
     Foyer getFoyerById(Long idFoyer);
+    List<Foyer> getAllFoyers500();
 }

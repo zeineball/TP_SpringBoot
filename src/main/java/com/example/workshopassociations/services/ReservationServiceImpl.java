@@ -33,4 +33,14 @@ public class ReservationServiceImpl implements ReservationService {
     public Reservation getReservationById(Long idReservation) {
         return reservationRepository.findById(idReservation).orElse(null);
     }
+
+    @Override
+    public List<Reservation> getAllReservationsValide() {
+        return reservationRepository.findAllReservationsValide();
+    }
+
+    @Override
+    public List<Reservation> getAllReservationsCurrentDate() {
+        return reservationRepository.findAllReservationsCurrentDate();
+    }
 }

@@ -9,4 +9,6 @@ public interface ReservationService {
     void deleteReservation(Long idReservation);
     List<Reservation> getAllReservations();
     Reservation getReservationById(Long idReservation);
+    List<Reservation> getAllReservationsValide();
+    List<Reservation> getAllReservationsCurrentDate();
 }

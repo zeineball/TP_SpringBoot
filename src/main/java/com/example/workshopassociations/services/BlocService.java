@@ -9,5 +9,8 @@ public interface BlocService {
     void deleteBloc(Long idBloc);
     Bloc getBlocById(Long idBloc);
     List<Bloc> getAllBloc();
+    Bloc getBlocByIdJPQL(Long idBloc);
+    List<Bloc> getAllBlocsByIdFoyer(Long idFoyer);
+    List<Bloc> getBlocsBy10Chambres();
 
 }

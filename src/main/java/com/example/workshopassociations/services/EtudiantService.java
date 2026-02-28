@@ -9,4 +9,9 @@ public interface EtudiantService {
     void deleteEtudiant(Long idEtudiant);
     List<Etudiant> getAllEtudiant();
     Etudiant getEtudiantById(Long idEtudiant);
+    List<Etudiant> getAllEtudiantsEsprit();
+    List<Etudiant> getAllEtudiants2000();
+    List<Etudiant> getAllEtudiantsByFoyer(Long idFoyer);
+    Long CountEtudiantsByUniv();
+    List<Etudiant> getAllEtudiantsReservation();
 }

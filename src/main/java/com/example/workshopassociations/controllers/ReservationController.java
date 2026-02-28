@@ -32,4 +32,14 @@ public class ReservationController {
     public Reservation  getReservation(@PathVariable Long id){
         return ReservationServiceImpl.getReservationById(id);
     }
+
+    @GetMapping("allValide")
+    public List<Reservation> findAllReservationsValide(){
+        return ReservationServiceImpl.getAllReservationsValide();
+    }
+
+    @GetMapping("allCurrentDate")
+    public List<Reservation> findAllReservationsCurrentDate(){
+        return ReservationServiceImpl.getAllReservationsCurrentDate();
+    }
 }
