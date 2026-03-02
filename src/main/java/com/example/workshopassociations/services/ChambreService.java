@@ -12,7 +12,6 @@ public interface ChambreService {
     List<Chambre> GetAllChambre();
     List<Chambre> GetAllChambresJPQL();
     List<Chambre> GetAllChambresSIMPLE();
-    List<Chambre> GetAllChambresByEtudiant(Long idEtudiant);
     List<Chambre> GetAllChambresByFoyerUniversite(String nomUniversite);
     Long CountChambresByTypeC(typeC typeC);
     List<Chambre> GetAllChambresByNumChambre();

@@ -9,8 +9,8 @@ import java.util.List;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    @Query("SELECT r FROM Reservation r WHERE r.estValidee = true")
+    @Query("SELECT r FROM Reservation r WHERE r.estValide = true")
     List<Reservation> findAllReservationsValide();
-    @Query("SELECT r FROM Reservation r WHERE YEAR(r.dateReservation) = YEAR(CURRENT_DATE)")
+    @Query("SELECT r FROM Reservation r WHERE YEAR(r.anneeUniversitaire) = YEAR(CURRENT_DATE)")
     List<Reservation> findAllReservationsCurrentDate();
 }

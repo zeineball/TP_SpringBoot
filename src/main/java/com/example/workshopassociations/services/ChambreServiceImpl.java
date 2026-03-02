@@ -47,11 +47,6 @@ public class ChambreServiceImpl implements ChambreService {
     }
 
     @Override
-    public List<Chambre> GetAllChambresByEtudiant(Long idEtudiant) {
-        return chambreRepository.findAllChambresReservedByEtudiant(idEtudiant);
-    }
-
-    @Override
     public List<Chambre> GetAllChambresByFoyerUniversite(String nomUniversite) {
         return chambreRepository.findAllChambresByFoyerUniversite(nomUniversite);
     }

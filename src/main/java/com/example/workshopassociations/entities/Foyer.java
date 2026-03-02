@@ -19,7 +19,7 @@ public class Foyer {
     private Long capaciteFoyer;
 
     @OneToOne(mappedBy = "foyer")
-    Universite uni;
+    Universite universite;
 
     @OneToMany (mappedBy = "foyer")
     List<Bloc> blocs;

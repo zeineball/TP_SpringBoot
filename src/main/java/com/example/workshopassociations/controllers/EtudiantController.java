@@ -43,10 +43,6 @@ public class EtudiantController {
         return EtudiantServiceImpl.getAllEtudiants2000();
     }
 
-    @GetMapping("/allByFoyer")
-    public List<Etudiant> getAllEtudiantsByFoyer(Long idFoyer){
-        return EtudiantServiceImpl.getAllEtudiantsByFoyer(idFoyer);
-    }
 
     @GetMapping("/countEtudiantsByUniv")
     public Long CountEtudiantsByUniv(){
@@ -55,7 +51,7 @@ public class EtudiantController {
 
     @GetMapping("/AllReservation")
     public List<Etudiant> getAllEtudiantsReservation(){
-        return EtudiantServiceImpl.getAllEtudiantsReservation();
+        return EtudiantServiceImpl.getEtudiantsAvecPlusDeReservationsQueMoyenne();
     }
 }
 
