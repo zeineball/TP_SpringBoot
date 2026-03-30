@@ -63,7 +63,7 @@ public class ChambreController {
 
     @Operation(description = "Count the number of Chambres by a given type (typeC).")
     @GetMapping("/countChambreByType/{type}")
-    public Long CountChambresByTypeC(@PathVariable("type") typeC type){
+    public Long CountChambresByTypeC(@PathVariable typeC type){
         return chambreServiceImpl.CountChambresByTypeC(type);
     }
 
@@ -71,6 +71,36 @@ public class ChambreController {
     @GetMapping("/allByNumChambre")
     public List<Chambre> getAllChambresByNumChambre(){
         return chambreServiceImpl.GetAllChambresByNumChambre();
+    }
+
+    @GetMapping("/allByTypeC/{type}")
+    public List<Chambre>GetAllBytypeChambre(@PathVariable typeC type){
+        return chambreServiceImpl.GetAllBytypeChambre(type);
+    }
+
+    @GetMapping("/allByBlocId/{idB}")
+    public List<Chambre> GetAllByBlocIdBloc(@PathVariable Long idB){
+        return chambreServiceImpl.GetAllByBlocIdBloc(idB);
+    }
+
+    @GetMapping("/getByNumC/{num}")
+    public Chambre GetChambreByNumeroChambre(@PathVariable Long num){
+        return chambreServiceImpl.GetChambreByNumeroChambre(num);
+    }
+
+    @GetMapping("/allByNumCAndTypeC/{numChambre}/{typeC}")
+    public List<Chambre> GetAllByNumeroChambreAndTypeChambre(@PathVariable Long numChambre,@PathVariable typeC typeC){
+        return chambreServiceImpl.GetAllByNumeroChambreAndTypeChambre(numChambre, typeC);
+    }
+
+    @GetMapping("/allByNomBloc/{nomBloc}")
+    public List<Chambre>GetAllByBlocNomBloc(@PathVariable String nomBloc){
+        return chambreServiceImpl.GetAllByBlocNomBloc(nomBloc);
+    }
+
+    @GetMapping("/countByTypeCAndIdB/{typeChambre}/{idBloc}")
+    public int GetCountBytypeChambreAndBlocIdBloc(@PathVariable typeC typeChambre , @PathVariable Long idBloc){
+        return chambreServiceImpl.GetCountBytypeChambreAndBlocIdBloc(typeChambre, idBloc);
     }
 
 

@@ -17,7 +17,7 @@ public class Chambre {
     private Long idChambre;
     private Long numeroChambre;
     @Enumerated(EnumType.STRING)
-    typeC TypeChambre;
+    typeC typeChambre;
 
     @ManyToOne
     Bloc bloc;

@@ -61,5 +61,35 @@ public class ChambreServiceImpl implements ChambreService {
         return chambreRepository.findAllChambresByNumChambre();
     }
 
+    @Override
+    public List<Chambre> GetAllBytypeChambre(typeC tc) {
+        return chambreRepository.findBytypeChambre(tc);
+    }
+
+    @Override
+    public List<Chambre> GetAllByBlocIdBloc(Long idBloc) {
+        return chambreRepository.findByBlocIdBloc(idBloc);
+    }
+
+    @Override
+    public Chambre GetChambreByNumeroChambre(Long numeroChambre) {
+        return chambreRepository.findChambreByNumeroChambre(numeroChambre);
+    }
+
+    @Override
+    public List<Chambre> GetAllByNumeroChambreAndTypeChambre(Long numeroChambre, typeC TypeChambre) {
+        return chambreRepository.findByNumeroChambreAndTypeChambre(numeroChambre, TypeChambre);
+    }
+
+    @Override
+    public List<Chambre> GetAllByBlocNomBloc(String nomBloc) {
+        return chambreRepository.findByBlocNomBloc(nomBloc);
+    }
+
+    @Override
+    public int GetCountBytypeChambreAndBlocIdBloc(typeC TypeChambre, Long idBloc) {
+        return chambreRepository.countBytypeChambreAndBlocIdBloc(TypeChambre, idBloc);
+    }
+
 }
 
