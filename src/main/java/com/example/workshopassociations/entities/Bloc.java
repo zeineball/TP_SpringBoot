@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
+@Table(name = "bloc")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +22,6 @@ public class Bloc {
     @ManyToOne
     private Foyer foyer;
 
-    @OneToMany(mappedBy = "bloc")
+    @OneToMany(mappedBy = "bloc" , fetch = FetchType.EAGER)
     List<Chambre> chambres;
 }
